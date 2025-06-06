@@ -1,0 +1,61 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    outline: none;
+    border: none;
+    list-style: none;
+    background: none;
+    font-weight: 400;
+}
+i,
+i::before,
+i::after {
+    font-weight: 600;
+}
+html {
+    font-size: 10px;
+    background: $bgColor;
+    min-height: 100vh;
+    scrollbar-width: thin;
+    scrollbar-color: $bgColorLight $bgColor;
+    scroll-behavior: smooth;
+}
+body {
+    font-family: $primary-font, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
+    color: $textColor;
+
+    button,
+    a {
+        cursor: pointer;
+        text-decoration: none;
+        color: $textColorDark;
+    }
+}
+::selection {
+    background-color: $textColorDark;
+    color: $textColorLightest;
+}
+
+.hideOverflow {
+    overflow: hidden;
+}
+
+ul.styled-list {
+    list-style: unset;
+    list-style-type: "▹";
+    list-style-position: outside;
+    li {
+        list-style: unset;
+        margin-left: 15px;
+        padding-left: 5px;
+        &::marker {
+            color: $highlightColor;
+        }
+    }
+}

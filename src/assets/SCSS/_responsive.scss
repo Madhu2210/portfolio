@@ -1,0 +1,239 @@
+.container {
+
+    .menu,
+    .close {
+        display: none;
+        font-size: 30px;
+        color: $highlightColor;
+        font-weight: 600;
+    }
+
+    @include breakpoint(ipad-max) {
+        padding: 0px 25px;
+    }
+
+    @include breakpoint(ipad) {
+        padding: 0px 20px;
+
+        .menu,
+        .close {
+            display: block;
+        }
+
+        .header-nav {
+            position: fixed;
+            display: flex;
+            justify-content: flex-end;
+            background-color: rgba(0, 0, 0, 0.5);
+            transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+            &.show {
+                width: 100%;
+                top: 0;
+                left: 0;
+                height: 100vh;
+            }
+
+            &.hide {
+                inset: -0% -100% 0% 100%;
+            }
+
+            .close {
+                position: absolute;
+                right: 20px;
+                top: 20px;
+            }
+
+            &-list {
+                width: min(75vw, 400px);
+                height: 100%;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                background-color: $bgColor;
+                gap: 20px;
+            }
+
+            &-item {
+                min-width: 150px;
+            }
+        }
+    }
+
+    @include breakpoint(small) {
+        padding: 0 15px;
+    }
+}
+
+.section {
+    &-container {
+        @include breakpoint(ipad) {
+            flex-direction: column-reverse;
+        }
+    }
+}
+
+section {
+    padding: 100px 50px 20px 50px;
+    @include breakpoint(ipad) {
+        padding: 100px 10px 10px 10px;
+    }
+}
+
+
+.company {
+    @include breakpoint(ipad) {
+        flex-direction: column !important;
+
+        &-list {
+            flex-direction: row !important;
+            width: 100% !important;
+            overflow-x: auto;
+            -ms-overflow-style: none;
+            /* IE and Edge */
+            scrollbar-width: none;
+
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            li {
+                &::before {
+                    width: 100% !important;
+                    height: 2px !important;
+                    bottom: 0 !important;
+                    left: 0 !important;
+                    top: unset !important;
+                }
+            }
+        }
+
+    }
+
+}
+
+
+.position {
+    &-left {
+        left: 50px;
+        position: fixed;
+        bottom: 0;
+
+
+        @include breakpoint(desktop-base) {
+            left: 25px;
+        }
+
+        @include breakpoint(ipad-max) {
+            left: 20px;
+        }
+
+        @include breakpoint(ipad) {
+            position: static;
+
+            .socail-list {
+                flex-direction: row;
+
+                &::after {
+                    display: none !important;
+                }
+            }
+        }
+
+
+    }
+
+    &-right {
+        right: 50px;
+        position: fixed;
+        bottom: 0;
+
+        @include breakpoint(desktop-base) {
+            right: 25px;
+        }
+
+        @include breakpoint(ipad-max) {
+            right: 20px;
+        }
+
+        @include breakpoint(ipad) {
+            position: static;
+
+            .mail {
+                text-align: center;
+
+                &-text {
+                    -webkit-writing-mode: unset !important;
+                    writing-mode: unset !important;
+                    margin-bottom: 0 !important;
+
+                }
+
+                &::after {
+                    display: none !important;
+                }
+            }
+        }
+    }
+}
+
+.featured {
+    @include breakpoint(ipad-max) {
+        padding: 0 !important;
+    }
+
+    &-img {
+        @include breakpoint(ipad-max) {
+            width: 60% !important;
+        }
+
+        @include breakpoint(ipad) {
+            width: 100% !important;
+            opacity: 0.3;
+        }
+
+        img {
+            @include breakpoint(ipad-max) {
+                object-position: center !important;
+
+            }
+        }
+    }
+
+    &-info {
+        @include breakpoint(ipad-max) {
+            flex: 0.55 !important;
+
+            .spec-list {
+                max-width: 100% !important;
+            }
+        }
+
+        @include breakpoint(ipad) {
+            flex: 1 !important;
+            padding: 10px !important;
+            align-items: flex-start !important;
+        }
+    }
+
+    &-description {
+        @include breakpoint(ipad) {
+            background-color: transparent !important;
+            text-align: start !important;
+            padding: 0 !important;
+            box-shadow: none !important;
+
+        }
+
+    }
+
+    &-wrapper {
+        @include breakpoint(ipad-max) {
+            gap: 50px !important;
+        }
+
+        @include breakpoint(ipad) {
+            gap: 30px !important;
+        }
+    }
+}

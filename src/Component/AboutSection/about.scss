@@ -1,0 +1,81 @@
+@import "../../assets/SCSS/variables";
+#about {
+    max-width: 1000px;
+    .section {
+        &-container {
+            display: flex;
+            flex-wrap: wrap-reverse;
+            gap: 30px;
+        }
+        &-left {
+            flex: 1;
+            font-size: 16px;
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+
+            .skill-list {
+                h4 {
+                    margin-bottom: 5px;
+                    font-weight: bold;
+                }
+                ul {
+                    display: grid;
+                    grid-template-columns: repeat(auto-fill, minmax(100px, 150px));
+                    gap: 5px 10px;
+                    font-size: 14px;
+                }
+            }
+        }
+        &-right {
+            flex: 1;
+            max-width: 300px;
+            margin: 0 auto auto;
+            .img-container {
+                // background-color: $highlightColor;
+                cursor: pointer;
+                max-width: 300px;
+                position: relative;
+                border-radius: 5px;
+                &::before {
+                    content: "";
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 10px;
+                    left: 10px;
+                    border: 2px solid $highlightColor;
+                    z-index: -1;
+                    border-radius: 5px;
+                    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+                }
+                img {
+                    display: block;
+                    object-fit: fill;
+                    width: 100%;
+                    aspect-ratio: 1 / 1;
+                    border: 2px solid $highlightColor;
+
+                    // mix-blend-mode: multiply;
+                    // filter: grayscale(100%) contrast(1);
+                    border-radius: 5px;
+                    position: relative;
+                }
+
+                &:hover {
+                    background-color: transparent;
+                    img {
+                        filter: unset;
+                        mix-blend-mode: unset;
+                        left: -5px;
+                        top: -5px;
+                    }
+                    &::before {
+                        top: 15px;
+                        left: 15px;
+                    }
+                }
+            }
+        }
+    }
+}

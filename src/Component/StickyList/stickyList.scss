@@ -1,0 +1,68 @@
+@import "../../assets/SCSS/variables";
+
+.socail-list {
+    display: flex;
+    gap: 30px;
+    flex-direction: column;
+    font-size: 18px;
+    justify-content: center;
+    color: $textColorLightest;
+
+    &-item {
+        cursor: pointer;
+        font-size: 22px;
+
+        &:hover {
+            transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+            transform: translateY(-5px);
+            scale: 1.2;
+            color: $highlightColor;
+        }
+    }
+}
+
+.mail {
+    a {
+        color: $textColorLightest;
+        margin-bottom: 30px;
+        display: block;
+        letter-spacing: 0.1em;
+        -webkit-writing-mode: vertical-rl;
+        writing-mode: vertical-rl;
+        font-size: 12px;
+
+        &:hover {
+            transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+            transform: translateY(-8px);
+            color: $highlightColor;
+        }
+    }
+}
+
+.sticky {
+    &::after {
+        content: "";
+        display: block;
+        width: 1.5px;
+        height: 90px;
+        margin: 0px auto;
+        background-color: $textColor;
+    }
+}
+
+
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    flex-direction: column;
+    margin-top: 30px;
+
+    a {
+        font-size: 14px;
+        &:hover{
+            color: $highlightColor;
+        }
+    }
+}

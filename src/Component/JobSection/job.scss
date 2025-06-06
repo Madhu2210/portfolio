@@ -1,0 +1,86 @@
+@import "../../assets/SCSS/variables";
+
+#job {
+    max-width: 900px;
+    min-height: 80vh;
+
+    .company {
+        display: flex;
+        gap: 25px;
+        align-items: flex-start;
+        width: 100%;
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+
+            li {
+                padding: 10px 20px;
+                cursor: pointer;
+                font-size: 16px;
+                text-transform: capitalize;
+                position: relative;
+
+                &:hover {
+                    background-color: $bgColorLight;
+                    color: $highlightColor;
+                    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+                }
+
+                &::before {
+                    content: "";
+                    position: absolute;
+                    height: 100%;
+                    width: 2px;
+                    top: 0;
+                    left: 0;
+                    background-color: $bgColorLight;
+                }
+
+                &.active {
+                    color: $highlightColor;
+                    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+
+                    &::before {
+                        background-color: $highlightColor;
+                    }
+                }
+            }
+        }
+
+        &-para {
+            flex: 1;
+        }
+
+        &-heading {
+            font-size: 18px;
+            text-transform: capitalize;
+            margin-bottom: 5px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px 10px;
+
+            .role {
+                font-weight: 600;
+            }
+        }
+
+        .duration {
+            margin: 0 0 15px 0;
+            font-size: 15px;
+            text-transform: capitalize;
+        }
+
+        &-name {
+            font-weight: 500;
+        }
+
+        &-info {
+            font-size: 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+    }
+}
