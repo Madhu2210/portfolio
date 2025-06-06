@@ -7,17 +7,15 @@ const StickyList = () => {
             window.open("https://github.com/Madhu2210/portfolio", '_blank', 'noopener,noreferrer');
         }
         if (e == "link") {
-            window.open("https://www.linkedin.com/in/joy-web-developer/", '_blank', 'noopener,noreferrer');
+            window.open("http://linkedin.com/in/madhu-kahar-2512a8241", '_blank', 'noopener,noreferrer');
         }
 
         if (e == "ins") {
-            alert("Not present")
-            // window.open("https://github.com/Joybosu456/myNewWebPage/tree/master", '_blank', 'noopener,noreferrer');
+           window.open("https://www.instagram.com/kashyap_madhu?igsh=bmhnM2IyZjNlNnps&utm_source=qr")
         }
 
         if (e == "fb") {
             alert("Not Present")
-            // window.open("https://github.com/Joybosu456/myNewWebPage/tree/master", '_blank', 'noopener,noreferrer');
         }
 
         else {
